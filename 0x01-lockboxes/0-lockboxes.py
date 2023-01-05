@@ -1,5 +1,5 @@
-#!/usr/bin/env python3
-"""Lockboxes project"""
+#!/usr/bin/python3
+"""Lockboxes project: it determines if a box can be opened"""
 
 
 def canUnlockAll(boxes):
