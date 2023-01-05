@@ -10,12 +10,11 @@ def canUnlockAll(boxes):
     opened_boxes = [0]
     size = len(boxes)
     for id in range(size):
-        for box in (boxes):
-            if box == []:
-                break
-            for ele in box:
-                if ele < size and ele != id and ele not in opened_boxes:
-                    opened_boxes.append(ele)
+        if boxes[id] == []:
+            continue
+        for ele in boxes[id]:
+            if ele < size and ele != id and ele not in opened_boxes:
+                opened_boxes.append(ele)
 
     if len(opened_boxes) == size:
         return True
