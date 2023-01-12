@@ -13,7 +13,8 @@ def minOperations(n):
 
     if n > 0:
         if sqrt(n) == int(sqrt(n)):
-            return (int(sqrt(n)) * 2)
+            if (sqrt(n)) % 2 != 0:
+                return (int(sqrt(n)) * 2)
 
         n_list = []
         for i in range(1, n):
@@ -24,9 +25,13 @@ def minOperations(n):
             return n
         if len_n_list == 2:
             return n_list[0] * 2
-        min_odd = min([x for x in n_list if x & 1])
-        if min_odd:
-            return len_n_list + min_odd
+        odd_list = []
+
+        for odd in n_list:
+            if odd & 1:
+                odd_list.append(odd)
+        if odd_list != []:
+            return len_n_list + min(odd_list)
         else:
-            return len_n_list * 2
+            return (len_n_list + 1) * 2
     return 0
